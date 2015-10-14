@@ -1,4 +1,6 @@
 # path-string
+[![Build Status](https://travis-ci.org/WeMeetAgain/path-string.svg?branch=master)](https://travis-ci.org/WeMeetAgain/path-string)
+[![Coverage Status](https://coveralls.io/repos/WeMeetAgain/path-string/badge.svg?branch=master&service=github)](https://coveralls.io/github/WeMeetAgain/path-string?branch=master)
 
 Path string utility library based on nodejs' [path](https://nodejs.org/api/path.html).
 
