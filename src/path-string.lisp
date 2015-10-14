@@ -1,6 +1,6 @@
 (cl:in-package #:cl-user)
 
-(defpackage :path-string
+(defpackage #:path-string
   (:use #:cl
 	#+unix #:path-string.posix
 	#+windows #:path-string.windows)

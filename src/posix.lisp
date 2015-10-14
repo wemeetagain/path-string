@@ -1,6 +1,6 @@
 (cl:in-package #:cl-user)
 
-(defpackage :path-string.posix
+(defpackage #:path-string.posix
   (:use #:cl)
   (:import-from #:split-sequence
 		#:split-sequence)
