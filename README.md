@@ -45,7 +45,7 @@ The windows-compatible version has yet to be implemented.
 ;;    "/home/user/dir"
 ;;    "file.txt"
 ;;    ".txt"
-::    "file"
+;;    "file"
 ```
 
 ## License
