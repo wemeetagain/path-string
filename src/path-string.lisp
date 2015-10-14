@@ -10,8 +10,8 @@
   (:import-from #:split-sequence
 		#:split-sequence)
   (:import-from #:uiop
-	       #:absolute-pathname-p
-	       #:pathname-directory-pathname)
+		#:absolute-pathname-p
+		#:pathname-directory-pathname)
   (:export #:*sep*
 	   #:*delimiter*
 	   #:normalize
