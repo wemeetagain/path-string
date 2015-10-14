@@ -92,8 +92,8 @@
   (absolute-pathname-p path))
 
 (defun relative (from to)
-  (let* ((from (subseq (resolve nil from) 1))
-	 (to (subseq (resolve nil to) 1))
+  (let* ((from (subseq (resolve from) 1))
+	 (to (subseq (resolve to) 1))
 	 (from-parts (trim-list
 		      (split-sequence #\/ from)))
 	 (to-parts (trim-list
