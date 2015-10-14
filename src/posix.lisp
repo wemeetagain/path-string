@@ -122,10 +122,10 @@
 		       (subseq dir 0 (1- (length dir))))))))
 
 (defun basename (path)
-  (let ((pathname (pathname path)))
-    (if (pathname-type pathname)
-      (format nil "~A.~A" (pathname-name pathname) (pathname-type pathname))
-      (pathname-name pathname))))
+  (multiple-value-bind (root dir base)
+      (posix-split-path path)
+    (declare (ignore root dir))
+    base))
 
 (defun extname (path)
   (let ((pathname (pathname path)))

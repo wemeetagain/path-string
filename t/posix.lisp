@@ -59,8 +59,10 @@
        do (is (dirname input) output))))
 
 (subtest "basename"
-  (let ((inputs '("/foo/bar/baz/asdf/quux.html"))
-	(outputs '("quux.html")))
+  (let ((inputs '("/foo/bar/baz/asdf/quux.html"
+		  "/home/dir/"))
+	(outputs '("quux.html"
+		   "dir")))
     (loop for input in inputs
        for output in outputs
        do (is (basename input) output))))
