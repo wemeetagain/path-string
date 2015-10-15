@@ -4,7 +4,6 @@
   (:use #:cl
 	#+unix #:path-string.posix
 	#+windows #:path-string.windows)
-  (:nicknames :path)
   (:import-from #:cl-ppcre
 		#:register-groups-bind)
   (:import-from #:split-sequence
