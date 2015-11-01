@@ -7,11 +7,12 @@
   :license "MIT"
   :depends-on (:cl-ppcre :split-sequence :uiop)
   :components ((:module "src"
-        :serial t
+		:serial t
 		:components
 		((:file "util")
 		 (:file "posix")
-		 (:file "path-string"))))
+		 (:file "path-string")
+		 (:file "documentation"))))
   :long-description #.(uiop:read-file-string
 		       (uiop:subpathname *load-pathname* "README.md"))
   :in-order-to ((test-op (test-op path-string-test))))
