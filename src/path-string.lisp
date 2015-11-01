@@ -4,13 +4,6 @@
   (:use #:cl
 	#+unix #:path-string.posix
 	#+windows #:path-string.windows)
-  (:import-from #:cl-ppcre
-		#:register-groups-bind)
-  (:import-from #:split-sequence
-		#:split-sequence)
-  (:import-from #:uiop
-		#:absolute-pathname-p
-		#:pathname-directory-pathname)
   (:export #:*sep*
 	   #:*delimiter*
 	   #:normalize

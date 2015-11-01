@@ -6,8 +6,7 @@
 		#:split-sequence)
   (:import-from #:uiop
 		#:absolute-pathname-p
-		#:getcwd
-		#:pathname-directory-pathname)
+		#:getcwd)
   (:import-from #:path-string.util
 		#:posix-split-path
 		#:normalize-list
