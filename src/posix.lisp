@@ -128,10 +128,10 @@
     base))
 
 (defun extname (path)
-  (let ((pathname (pathname path)))
-    (if (pathname-type pathname)
-	(format nil ".~A" (pathname-type pathname))
-	"")))
+  (multiple-value-bind (root dir base ext)
+      (posix-split-path path)
+    (declare (ignore root dir base))
+    ext))
 
 (defun parse (path)
   (multiple-value-bind (root dir base ext)
