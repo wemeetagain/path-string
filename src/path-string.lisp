@@ -2,16 +2,16 @@
 
 (defpackage #:path-string
   (:use #:cl
-	#+unix #:path-string.posix
-	#+windows #:path-string.windows)
+        #+unix #:path-string.posix
+        #+windows #:path-string.windows)
   (:export #:*sep*
-	   #:*delimiter*
-	   #:normalize
-	   #:join
-	   #:resolve
-	   #:absolute-p
-	   #:relative
-	   #:dirname
-	   #:basename
-	   #:extname
-	   #:parse))
+           #:*delimiter*
+           #:normalize
+           #:join
+           #:resolve
+           #:absolute-p
+           #:relative
+           #:dirname
+           #:basename
+           #:extname
+           #:parse))
