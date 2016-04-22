@@ -1,7 +1,7 @@
 (cl:in-package #:asdf-user)
 
 (defsystem :path-string
-  :version "0.1.0"
+  :version (:read-file-form "version.txt")
   :description "A path utility library"
   :author "Cayman Nava"
   :license "MIT"
