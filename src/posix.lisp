@@ -2,6 +2,8 @@
 
 (defpackage #:path-string.posix
   (:use #:cl)
+  (:import-from #:cl-ppcre
+                #:register-groups-bind)
   (:import-from #:split-sequence
                 #:split-sequence)
   (:import-from #:uiop
@@ -120,11 +122,16 @@
                      (unless (string= dir "")
                        (subseq dir 0 (1- (length dir))))))))
 
-(defun basename (path)
+(defun basename (path &optional ext)
   (multiple-value-bind (root dir base)
       (posix-split-path path)
     (declare (ignore root dir))
-    base))
+    (if ext
+        (or (register-groups-bind (clipped-base)
+            ((format nil "(.*)~A" ext) base)
+              (or clipped-base base))
+            base)
+        base)))
 
 (defun extname (path)
   (multiple-value-bind (root dir base ext)
