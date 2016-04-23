@@ -59,13 +59,23 @@
           do (is (dirname input) output))))
 
 (subtest "basename"
-  (let ((inputs '("/foo/bar/baz/asdf/quux.html"
-                  "/home/dir/"))
+  (let ((inputs '(("/foo/bar/baz/asdf/quux.html" nil)
+                  ("/foo/bar/baz/asdf/quux.html" "")
+                  ("/foo/bar/baz/asdf/quux.html" ".html")
+                  ("/foo/bar/baz/asdf/quux.html" "quux.html")
+                  ("/foo/bar/baz/asdf/quux.html" "morequux.html")
+                  ("/home/dir/" nil)
+                  ("/home/dir/" "")))
         (outputs '("quux.html"
+                   "quux.html"
+                   "quux"
+                   ""
+                   "quux.html"
+                   "dir"
                    "dir")))
-    (loop for input in inputs
+    (loop for (input1 input2) in inputs
           for output in outputs
-          do (is (basename input) output))))
+          do (is (basename input1 input2) output))))
 
 (subtest "extname"
   (let ((inputs '("index.html"
