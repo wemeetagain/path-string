@@ -45,9 +45,8 @@
 
 ;;; posix-specific
 
-(eval-when (:compile-toplevel :load-toplevel :execute)
-  (defparameter *posix-split-path-re*
-    "^(\/?|)([\\s\\S]*?)((?:\\.{1,2}|[^\/]+?|)(\\.[^.\/]*|))(?:[\/]*)$"))
+(defparameter *posix-split-path-re*
+  "^(\/?|)([\\s\\S]*?)((?:\\.{1,2}|[^\/]+?|)(\\.[^.\/]*|))(?:[\/]*)$")
 
 (defun posix-split-path (path)
   (register-groups-bind (root dir basename ext)

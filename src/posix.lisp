@@ -29,10 +29,9 @@
 
 (in-package #:path-string.posix)
 
-(eval-when (:compile-toplevel :load-toplevel :execute)
-  (defvar *sep* #\/)
+(defvar *sep* #\/)
 
-  (defvar *delimiter* #\:))
+(defvar *delimiter* #\:)
 
 (defun normalize (path)
   (let ((absolute-p (absolute-p path))
