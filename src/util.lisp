@@ -20,14 +20,14 @@
      for part in parts
      unless (or (string= part "")
                 (string= part "."))
-       do (if (string= part "..")
-              (cond
-                ((and (length result)
-                      (not (string= (nth (1- (length result)) result) "..")))
-                 (pop result))
-                (allow-above-root-p
-                 (push ".." result)))
-              (push part result))
+       if (string= part "..")
+         do (cond
+              ((and (length result)
+                    (not (string= (nth (1- (length result)) result) "..")))
+               (pop result))
+              (allow-above-root-p
+               (push ".." result)))
+         else do (push part result)
      finally (return result))))
 
 (defun trim-list (list)

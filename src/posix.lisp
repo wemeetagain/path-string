@@ -43,14 +43,12 @@
            (normalize-list
             (split-sequence #\/ path)
             (not absolute-p))))
-
     (when (and (string= path "")
                absolute-p)
       (setf path "."))
     (when (and (not (string= path ""))
                trailing-slash)
       (setf path (format nil "~A/" path)))
-
     (posix-format-path path absolute-p)))
 
 (defun join (&rest paths)
@@ -62,8 +60,8 @@
             unless (string= segment "")
               if path-exists
                 collect "/" end and
-            collect segment and
-            do (setf path-exists t)))))
+                collect segment and
+                do (setf path-exists t)))))
 
 (defun resolve (&rest paths)
   (let ((resolved-path "")
